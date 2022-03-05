@@ -1,4 +1,4 @@
-package boaspraticas;
+package Boaspraticas;
 
 /** Classe de exemplo para o exercicio da aula 1 de Variaveis, tipos de dados e Operadores aritmeticos */
 
