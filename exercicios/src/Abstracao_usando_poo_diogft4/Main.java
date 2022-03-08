@@ -1,6 +1,5 @@
 package Abstracao_usando_poo_diogft4;
 
-
 import java.time.LocalDate;
 
 public class Main {
@@ -21,9 +20,37 @@ public class Main {
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp JAVA Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devCarolina = new Dev();
+        devCarolina.setNome("Carolina");
+        devCarolina.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos da Carolina " + devCarolina.getConteudosInscritos());
+        devCarolina.progredir();
+        devCarolina.progredir();
+        devCarolina.progredir();
+        System.out.println("---");
+        System.out.println("Conteúdos inscritos da Carolina " + devCarolina.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos da Carolina " + devCarolina.getConteudosConcluidos());
+        System.out.println("XP: " + devCarolina.calcularTotalXp());
+
+        System.out.println("------------------------");
+
+        Dev devJoaquim = new Dev();
+        devJoaquim.setNome("Joaquim");
+        devJoaquim.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos do Joaquim " + devJoaquim.getConteudosInscritos());
+        devJoaquim.progredir();
+        devJoaquim.progredir();
+        System.out.println("---");
+        System.out.println("Conteúdos inscritos do Joaquim " + devJoaquim.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos do Joaquim " + devJoaquim.getConteudosConcluidos());
+        System.out.println("XP: " + devJoaquim.calcularTotalXp());
 
 
     }
