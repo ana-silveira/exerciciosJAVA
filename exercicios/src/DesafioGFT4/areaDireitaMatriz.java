@@ -10,6 +10,33 @@ de ponto flutuante que compõem a matriz.
 Saida: Imprima o resultado solicitado (a soma ou média), com 1 casa após o ponto decimal.
   */
 
-    import java.io.IOException;
-    import java.util.Scanner;
+import java.io.IOException;
+import java.util.Scanner;
 
+public class areaDireitaMatriz {
+
+        public static void main(String[] args) throws IOException {
+                Scanner leitor = new Scanner(System.in);
+                double soma = 0;
+                int i, j;
+
+                char O = leitor.next().toUpperCase().charAt(0);
+                double[][] M = new double[12][12];
+
+                for (i = 0; i < M.length; i++) {
+                        for (j = 0; j < M.length; j++) {
+                                M[i][j] = leitor.nextDouble();
+                        }
+                }
+
+                for (i = 0; i < M.length; i++) {
+                        for (j = 0; j < M.length; j++) {
+                                if (((i < M.length / 2) && i + j >= M.length) || ((i >= M.length / 2) && j - i > 0))
+                                        soma += M[i][j];
+                        }
+                }
+
+                if (O == 'M') soma /= 30;
+                System.out.printf("%.1f%n", soma);
+        }
+}
